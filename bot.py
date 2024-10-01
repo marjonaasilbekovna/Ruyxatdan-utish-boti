@@ -147,13 +147,6 @@ async def register_kocha_del(message: Message, state:FSMContext):
 async def register_maktab(message: Message, state:FSMContext):
     data = await state.get_data()
 
-@dp.message(Registor.maktab)
-async def register_maktab_del(message: Message, state:FSMContext):
-    await message.answer(text= "Maktabingizni tug'ri kiriting ❗️")
-    await message.delete()
-
-    data = await state.get_data()
-
     ism = data.get("name")
     familiya = data.get("surname")
     yosh = data.get("age")
@@ -173,6 +166,11 @@ async def register_maktab_del(message: Message, state:FSMContext):
         await bot.send_message(chat_id= admin, text=text)
         await bot.send_photo(chat_id= admin, photo=rasm)
     await state.clear()
+
+@dp.message(Registor.maktab)
+async def register_maktab_del(message: Message, state:FSMContext):
+    await message.delete()
+    await message.answer(text= "Maktabingizni tug'ri kiriting ❗️")
 
 
 @dp.startup()
