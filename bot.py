@@ -7,8 +7,8 @@ from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 from states import Registor
 
-TOKEN = "7181305178:AAEVp764bS7csy8A7lcAXUrNkj7Z9x--2hE"
-ADMIN_ID = [7241341727, 7376235983]
+TOKEN = ""
+ADMIN_ID = []
 
 dp = Dispatcher()
 
